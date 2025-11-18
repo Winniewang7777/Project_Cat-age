@@ -1,58 +1,98 @@
+/* 基本設定 */
 body {
     margin: 0;
     padding: 0;
     font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
-    background: #fafafa;
-    color: #333;
+    background: #f4f5f7;
     display: flex;
     justify-content: center;
 }
 
+/* 外容器 */
 .container {
-    max-width: 900px;
-    width: 95%;
-    margin: 40px auto;
-    display: flex;
+    width: 100%;
+    max-width: 450px;
     background: #fff;
+    margin: 30px auto;
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     overflow: hidden;
 }
 
-.left {
-    width: 40%;
+/* 上方圖片 */
+.image {
+    width: 100%;
+    height: 240px;
+    background-image: url("https://images.unsplash.com/photo-1611267254323-4db7b39c732c?q=80&w=686&auto=format&fit=crop");
     background-size: cover;
     background-position: center;
-    /* 這裡使用了圖片 URL，如果想換圖可以替換這裡 */
-    background-image: url('https://images.unsplash.com/photo-1611267254323-4db7b39c732c?q=80&w=686&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 }
 
-.right {
-    width: 60%;
-    padding: 40px;
+/* 內容區 */
+.content {
+    padding: 25px;
 }
 
 h2 {
+    text-align: center;
     margin-top: 0;
-    font-size: 26px;
+    color: #ed7337;
+    font-size: 24px;
     font-weight: 700;
-    color: #444;
 }
 
-label {
-    font-weight: 600;
-    display: block;
-    margin: 15px 0 5px;
+/* 日期輸入框區 */
+.date-wrapper {
+    width: 100%;
 }
 
 input[type="date"] {
     width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
+    padding: 12px;
     font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
+/* placeholder 修正 */
+input[type="date"]:not(:focus):invalid::before {
+    content: attr(placeholder);
+    color: #aaa;
+}
+
+/* 通用按鈕 */
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.2s;
+}
+
+/* 開始計算 */
+#calcBtn {
+    background: #ed7337;
+    color: #fff;
+}
+#calcBtn:hover {
+    background: #e7590b;
+}
+
+/* 清除按鈕（灰色、不明顯） */
+.clear-btn {
+    background: #cfcfcf;
+    color: #555;
+}
+.clear-btn:hover {
+    background: #b5b5b5;
+}
+
+/* 結果區 */
 .result {
     margin-top: 25px;
     background: #f6f6f6;
@@ -60,19 +100,4 @@ input[type="date"] {
     border-radius: 10px;
     line-height: 1.8;
     font-size: 18px;
-}
-
-/* RWD 響應式設計 */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    .left {
-        width: 100%;
-        height: 220px;
-    }
-    .right {
-        width: 100%;
-        padding: 25px;
-    }
 }
