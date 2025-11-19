@@ -1,0 +1,16 @@
+{
+  "name": "貓齡 vs 人齡 換算工具",
+  "short_name": "貓齡換算",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
